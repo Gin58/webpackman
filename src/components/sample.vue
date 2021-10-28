@@ -14,7 +14,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .message--sample{
     color: red;
     font-size: 25px;

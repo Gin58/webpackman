@@ -5,10 +5,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build":"webpack --mode production" 
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "css-loader": "^6.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "node-sass": "4.14.1",
+    "sass-loader": "10.1.1",
     "style-loader": "^3.3.1",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
