@@ -9,6 +9,9 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: 'bundle.js'
   },
+  // ソースマップを有効化
+  mode:"development",
+  devtool: 'inline-source-map',
   devServer: {
     // 読み込み先のディレクトリを指定
     static: {
@@ -24,7 +27,19 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          {
+            loader:'postcss-loader',
+            options:{
+              postcssOptions:{
+                plugins:[
+                  require('autoprefixer')({
+                    grid: true
+                  })
+                ]
+              }
+            }
+          },
         ]
       },
       {
