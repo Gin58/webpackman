@@ -47,6 +47,10 @@ module.exports = {
         loader: 'vue-loader',
       },
       {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
         test: /\.ts$/,
         use: [{
           loader: 'ts-loader',
