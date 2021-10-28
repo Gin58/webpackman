@@ -1,18 +1,22 @@
 <template>
   <div>
-    <p class="message--sample">{{ message }}</p>
-    <input type="text" v-model="message">
+    <p class="message--sample">{{ state.message }}</p>
+    <input type="text" v-model="state.message">
   </div>
 </template>
-<script>
-export default {
-  name:'sample',
-  data:function(){
-    return{
-      message:'hello world!',
+<script lang="ts">
+import { defineComponent, reactive } from "@vue/composition-api";
+
+export default defineComponent({
+  setup() {
+    const state = reactive<{ message: string }>({
+      message: "hello world!"
+    })
+    return {
+      state
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
   .message--sample{
