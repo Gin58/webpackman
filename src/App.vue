@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/" exact-active-class="active">Home</router-link> |
       <router-link to="/about" exact-active-class="active">About</router-link>
+      <p class="text-gray-500">aoninatteru?</p>
     </div>
     <router-view/>
   </div>
