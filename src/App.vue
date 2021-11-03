@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/" exact-active-class="active">Home</router-link> |
+      <router-link to="/about" exact-active-class="active">About</router-link>
     </div>
     <router-view/>
   </div>
@@ -18,3 +18,8 @@ export default defineComponent({
   },
 })
 </script>
+<style lang='scss'>
+.active {
+  color: red;
+}
+</style>
