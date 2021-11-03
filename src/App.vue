@@ -1,6 +1,10 @@
 <template>
   <div>
-    <sample /> //sample.vueで作成したtemplateを読み込みます。
+    <div id="nav">
+      <router-link to="/" exact-active-class="active">Home</router-link> |
+      <router-link to="/about" exact-active-class="active">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -14,3 +18,8 @@ export default defineComponent({
   },
 })
 </script>
+<style lang='scss'>
+.active {
+  color: red;
+}
+</style>

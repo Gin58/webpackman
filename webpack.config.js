@@ -74,7 +74,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: `./index.html`,
-      template: `./src/html/index.html`
+      template: `./src/html/index.html`,
+      minify: {
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true
+      },
+      nodeModules: false
     })
   ],
 }
