@@ -64,6 +64,10 @@ module.exports = {
           }
         }]
       },
+      {
+        test: /\.(gif|png|jpg)$/,
+        loader: 'url-loader'
+      }
     ]
   },
   resolve: {
