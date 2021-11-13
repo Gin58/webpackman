@@ -27,7 +27,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            }
+          },
           {
             loader:'postcss-loader',
             options:{
@@ -59,13 +64,22 @@ module.exports = {
           }
         }]
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          esModule: false,
+        },
+      },
     ]
   },
   resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.js', '.ts', '.vue', '.json'], //jsファイルとvueファイルの拡張子の省略（'./foo.js'を'./foo'と省略して書けるようになる）
     alias: {
       vue$: 'vue/dist/vue.esm.js'
-    }
+    },
   },
   plugins: [
     new VueLoaderPlugin(),
